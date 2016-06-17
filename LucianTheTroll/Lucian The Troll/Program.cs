@@ -227,7 +227,7 @@ namespace Lucian_The_Troll
             }
             if (!Sender.IsDashing() && Sender.Type == GameObjectType.AIHeroClient && Sender.IsValidTarget(Q.Range) && Q.IsReady() && Sender.IsEnemy)
             {
-
+                Harass(Sender);
 
             } 
         }
