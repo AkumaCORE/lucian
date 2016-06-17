@@ -225,7 +225,7 @@ namespace Lucian_The_Troll
             {
                return;
             }
-            if (Sender.IsEnemy && Sender.Type == GameObjectType.AIHeroClient)
+            if (Sender.IsEnemy && Sender.Type == GameObjectType.AIHeroClient && Sender.Distance(_Player) <= Q1.Range)
             {
                 Harass();
 
