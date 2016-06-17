@@ -216,6 +216,20 @@ namespace Lucian_The_Troll
             Obj_AI_Base.OnBuffGain += OnBuffGain;
             Gapcloser.OnGapcloser += Gapcloser_OnGapCloser;
             Drawing.OnDraw += Drawing_OnDraw;
+             Obj_AI_Base.OnBasicAttack += Obj_AI_Base_OnBasicAttack;
+        }
+       
+        private static void Obj_AI_Base_OnBasicAttack(Obj_AI_Base Sender, GameObjectProcessSpellCastEventArgs args)
+        {
+            if (Sender == null || !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit))
+            {
+               return;
+            }
+            if (!Sender.IsDashing() && Sender.Type == GameObjectType.AIHeroClient && Sender.IsValidTarget(Q.Range) && Q.IsReady() && Sender.IsEnemy)
+            {
+
+
+            } 
         }
 
         public static
